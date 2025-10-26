@@ -15,7 +15,6 @@
         {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}
     };
 
-    // Конструкторы
     public RomanNumber() { value = 1; }
 
     public RomanNumber(int number)
@@ -34,7 +33,6 @@
             throw new ArgumentOutOfRangeException(nameof(romanNumber), "Диапазон: 1-3999");
     }
 
-    // Свойства
     public int IntValue
     {
         get => value;
@@ -58,7 +56,6 @@
         }
     }
 
-    // Методы преобразования
     private string IntToRoman(int number)
     {
         if (number <= 0 || number > 3999)
@@ -101,7 +98,6 @@
         return result;
     }
 
-    // ToString
     public override string ToString() => StringValue;
 
     // Арифметические операторы
@@ -126,7 +122,6 @@
         return new RomanNumber(result);
     }
 
-    // Операторы сравнения
     public static bool operator <(RomanNumber a, RomanNumber b) => a.value < b.value;
     public static bool operator >(RomanNumber a, RomanNumber b) => a.value > b.value;
     public static bool operator <=(RomanNumber a, RomanNumber b) => a.value <= b.value;
@@ -139,7 +134,6 @@
     }
     public static bool operator !=(RomanNumber a, RomanNumber b) => !(a == b);
 
-    // Equals и GetHashCode (обязательны при переопределении ==)
     public override bool Equals(object obj)
     {
         if (obj is RomanNumber other)
@@ -148,4 +142,5 @@
     }
 
     public override int GetHashCode() => value.GetHashCode();
+
 }
